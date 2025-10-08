@@ -96,7 +96,7 @@ Card {
   position: Number,
   createdAt: Date,
   updatedAt: Date,
-  _destroy: BooleanSS
+  _destroy: Boolean
 }
 ```
 
@@ -121,7 +121,7 @@ Activity {
   _id: ObjectId,
   boardId: ObjectId (ref Board),
   userId: ObjectId (ref User),
-  action: String,   //tạo, di chuyển card
+  action: String,
   targetId: ObjectId,
   createdAt: ISODate}
 ```
