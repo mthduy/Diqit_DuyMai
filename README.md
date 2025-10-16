@@ -12,14 +12,14 @@
 
 ## 2.Kiến trúc hệ thống
 
-| Thành phần         | Công nghệ sử dụng                       |
-| ------------------ | --------------------------------------- |
-| **Frontend**       | React + Vite + TailwindCSS + shadcn/ui  |
-| **Backend**        | Node.js + Express + TypeScript          |
-| **Database**       | MongoDB (Mongoose ODM)                  |
-| **Authentication** | JWT (JSON Web Token)                    |
-| **Realtime**       | WebSocket / Socket.IO _(giai đoạn sau)_ |
-| **Triển khai**     | Docker                                  |
+| Thành phần         | Công nghệ sử dụng                      |
+| ------------------ | -------------------------------------- |
+| **Frontend**       | React + Vite + TailwindCSS + shadcn/ui |
+| **Backend**        | Node.js + Express + TypeScript         |
+| **Database**       | MongoDB (Mongoose ODM)                 |
+| **Authentication** | JWT (JSON Web Token)                   |
+| **Realtime**       | WebSocket / Socket.IO                  |
+| **Triển khai**     | Docker                                 |
 
 ---
 
@@ -46,8 +46,8 @@ User {
   email: String (unique),
   password: String (hashed),
   avatarUrl: String,
-  createdAt: Date,
-  updatedAt: Date,
+  createdAt: ISODate,
+  updatedAt: ISODate,
   _destroy: Boolean
 }
 ```
@@ -61,8 +61,8 @@ Board {
   description: String,
   owner: ObjectId (ref User),
   members: [ObjectId] (ref User),
-  createdAt: Date,
-  updatedAt: Date,
+  createdAt: ISODate,
+  updatedAt: ISODate,
   _destroy: Boolean
 }
 ```
@@ -75,8 +75,8 @@ List {
   title: String,
   boardId: ObjectId (ref Board),
   position: Number,
-  createdAt: Date,
-  updatedAt: Date,
+  createdAt: ISODate,
+  updatedAt: ISODate,
   _destroy: Boolean
 }
 ```
@@ -94,8 +94,8 @@ Card {
   dueDate: Date,
   members: [ObjectId] (ref User),
   position: Number,
-  createdAt: Date,
-  updatedAt: Date,
+  createdAt: ISODate,
+  updatedAt: ISODate,
   _destroy: Boolean
 }
 ```
